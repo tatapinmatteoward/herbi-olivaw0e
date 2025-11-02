@@ -1,0 +1,205 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Herbivore Hub - Your Gateway to Botanical Wonders";
+const pageDescription = "Explore the vibrant world of plants with Herbivore Hub. Discover medicinal herbs, sustainable gardening tips, and botanical inspirations to enhance your green lifestyle.";
+
+const features = [
+  {
+    icon: "fas fa-leaf",
+    title: "Medicinal Marvels",
+    text: "Uncover the therapeutic benefits of herbs like echinacea for immunity or lavender for relaxation. Learn how to incorporate them safely into your daily routine."
+  },
+  {
+    icon: "fas fa-seedling",
+    title: "Sustainable Gardening",
+    text: "Embrace eco-conscious practices with tips on companion planting, organic pest control, and water-saving techniques to nurture your garden."
+  },
+  {
+    icon: "fas fa-spa",
+    title: "Botanical Inspirations",
+    text: "Discover the art and science behind plant-based wellness and find inspiration for creating your own botanical sanctuary."
+  }
+];
+
+const testimonials = [
+  {
+    quote: "Herbivore Hub transformed my understanding of medicinal plants. The practical advice is invaluable!",
+    author: "Sarah M.",
+    role: "Gardener"
+  },
+  {
+    quote: "I've learned so much about sustainable practices that have made my garden thrive sustainably.",
+    author: "Michael T.",
+    role: "Urban Farmer"
+  },
+  {
+    quote: "The botanical inspiration section has sparked countless creative projects in my home.",
+    author: "Emma R.",
+    role: "Plant Enthusiast"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#5d7d67] via-[#4a6452] to-[#3b5442] z-0"></div>
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iI2ZmN2I2YyIgZmlsbC1vcGFjaXR5PSIwLjA1Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+')] opacity-20 z-10"></div>
+    
+    <div class="container mx-auto px-4 py-24 md:py-32 relative z-10">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Herbivore Hub
+        </h1>
+        <p class="text-xl md:text-2xl text-[#ff7b6c] mb-8 font-serif">
+          Your Gateway to Botanical Wonders, Medicinal Herbs, and Sustainable Gardening
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <button class="bg-[#ff7b6c] hover:bg-[#e56a5a] text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+            Explore Botanics
+          </button>
+          <button class="border-2 border-white text-white hover:bg-white hover:text-[#5d7d67] font-bold py-3 px-8 rounded-full transition-all duration-300">
+            Join Community
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Welcome Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#5d7d67] mb-6">Welcome to Herbivore Hub</h2>
+        <div class="h-1 w-24 bg-[#ff7b6c] mx-auto mb-8"></div>
+        <p class="text-lg text-gray-700 font-serif leading-relaxed">
+          Dive into a lush paradise where nature's secrets unfold! At Herbivore Hub, we're passionate about connecting you with the healing power of plants, eco-friendly gardening, and the sheer beauty of botanicals. Whether you're a seasoned gardener or just starting your green journey, our hub is your ultimate resource.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {features.map((feature, index) => (
+          <div key={index} class="bg-gradient-to-br from-[#f0f7f4] to-[#e1f0e9] border border-[#5d7d67]/10 rounded-xl p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <div class="w-16 h-16 rounded-full bg-[#5d7d67] flex items-center justify-center mb-6">
+              <i class={`${feature.icon} text-white text-2xl`}></i>
+            </div>
+            <h3 class="text-xl font-bold text-[#5d7d67] mb-3">{feature.title}</h3>
+            <p class="text-gray-600 font-serif">{feature.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="py-16 bg-gradient-to-br from-[#5d7d67]/5 to-[#4a6452]/5">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#5d7d67] mb-4">Why Choose Herbivore Hub?</h2>
+        <div class="h-1 w-24 bg-[#ff7b6c] mx-auto"></div>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+          <div class="flex flex-col md:flex-row gap-8 items-center">
+            <div class="md:w-2/3">
+              <h3 class="text-2xl font-bold text-[#5d7d67] mb-4">Your Journey Starts Here</h3>
+              <p class="text-gray-700 mb-6 font-serif leading-relaxed">
+                We believe in empowering you with knowledge that connects you deeply with the plant kingdom. From identifying local herbs to understanding their properties, we guide you every step of the way. Our approach combines traditional wisdom with modern scientific research to bring you the most accurate information possible.
+              </p>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <div class="w-6 h-6 rounded-full bg-[#ff7b6c] flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                    <i class="fas fa-check text-white text-xs"></i>
+                  </div>
+                  <span class="text-gray-700">Expert-curated herbal guides</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-6 h-6 rounded-full bg-[#ff7b6c] flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                    <i class="fas fa-check text-white text-xs"></i>
+                  </div>
+                  <span class="text-gray-700">Sustainable growing practices</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-6 h-6 rounded-full bg-[#ff7b6c] flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                    <i class="fas fa-check text-white text-xs"></i>
+                  </div>
+                  <span class="text-gray-700">Community-driven learning platform</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="w-6 h-6 rounded-full bg-[#ff7b6c] flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                    <i class="fas fa-check text-white text-xs"></i>
+                  </div>
+                  <span class="text-gray-700">Seasonal botanical inspiration</span>
+                </li>
+              </ul>
+            </div>
+            <div class="md:w-1/3 flex justify-center">
+              <div class="relative">
+                <div class="w-48 h-48 rounded-full bg-gradient-to-br from-[#5d7d67] to-[#3b5442] flex items-center justify-center shadow-lg">
+                  <div class="w-40 h-40 rounded-full bg-[#e1f0e9] flex items-center justify-center">
+                    <i class="fas fa-leaf text-[#5d7d67] text-6xl"></i>
+                  </div>
+                </div>
+                <div class="absolute -top-4 -right-4 bg-[#ff7b6c] text-white font-bold py-2 px-4 rounded-full rotate-12">
+                  New!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#5d7d67] mb-4">Community Voices</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto font-serif">Hear from fellow botanical enthusiasts who've transformed their lives through Herbivore Hub</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div key={index} class="bg-gradient-to-br from-[#f0f7f4] to-[#e1f0e9] border border-[#5d7d67]/10 rounded-xl p-8 hover:shadow-lg transition-all duration-300">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 rounded-full bg-[#5d7d67] flex items-center justify-center text-white font-bold mr-4">
+                {testimonial.author.charAt(0)}
+              </div>
+              <div>
+                <h4 class="font-bold text-[#5d7d67]">{testimonial.author}</h4>
+                <p class="text-sm text-gray-600">{testimonial.role}</p>
+              </div>
+            </div>
+            <p class="text-gray-700 italic font-serif">"{testimonial.quote}"</p>
+            <div class="flex mt-4">
+              {[...Array(5)].map((_, i) => (
+                <i key={i} class="fas fa-star text-yellow-400"></i>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-[#5d7d67] to-[#3b5442]">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Bloom?</h2>
+      <p class="text-xl text-[#ff7b6c] mb-10 max-w-2xl mx-auto font-serif">
+        Join thousands of plant lovers discovering the magic of botanical medicine and sustainable living
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button class="bg-[#ff7b6c] hover:bg-[#e56a5a] text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+          Start Your Green Journey
+        </button>
+        <button class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#5d7d67] font-bold py-4 px-10 rounded-full transition-all duration-300">
+          View Community Gallery
+        </button>
+      </div>
+    </div>
+  </section>
+</Layout>

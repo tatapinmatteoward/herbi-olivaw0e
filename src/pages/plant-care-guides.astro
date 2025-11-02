@@ -1,0 +1,198 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Plant Care Guides - Green Chronicles";
+const pageDescription = "Unlock the secrets to thriving plants with our comprehensive care guides. From beginner tips on watering and lighting to advanced pruning techniques, nurture your green companions with expert advice from Green Chronicles.";
+
+const careTips = [
+  {
+    title: "Essential Watering Tips",
+    content: "Observe Before You Water: Check soil moisture before watering. Stick your finger 1 inch into the soil – if it feels dry, it's time to water. Overwatering is one of the most common causes of plant death."
+  },
+  {
+    title: "Lighting Requirements",
+    content: "Match Light Levels: Different plants thrive in different light conditions. Low-light plants like pothos can survive in indirect sunlight, while succulents crave bright, direct light. Place accordingly."
+  },
+  {
+    title: "Soil & Drainage",
+    content: "Choose the Right Mix: Use well-draining soil for most houseplants. Add perlite or pumice to improve drainage. Ensure pots have drainage holes to prevent root rot."
+  }
+];
+
+const plantTypes = [
+  { name: "Succulents", icon: "fas fa-seedling", description: "Low maintenance, drought-tolerant plants perfect for beginners." },
+  { name: "Foliage Plants", icon: "fas fa-leaf", description: "Beautiful leaves that add texture and drama to any space." },
+  { name: "Flowering Plants", icon: "fas fa-sun", description: "Vibrant blooms that bring life and color to your environment." },
+  { name: "Vining Plants", icon: "fas fa-arrows-alt-h", description: "Graceful trailing plants that create natural privacy screens." }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-br from-[#1f4c27] to-[#0d2a15] py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-10 left-10 w-64 h-64 bg-[#f4c448] rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
+      <div class="absolute top-40 right-10 w-72 h-72 bg-[#f4c448] rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+      <div class="absolute bottom-10 left-1/2 w-80 h-80 bg-[#f4c448] rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Plant Care Guides
+        </h1>
+        <p class="text-xl text-[#f4c448] mb-8 font-light">
+          Unlock the secrets to thriving plants with our comprehensive care guides
+        </p>
+        <p class="text-lg text-white max-w-2xl mx-auto leading-relaxed">
+          From beginner tips on watering and lighting to advanced pruning techniques, 
+          nurture your green companions with expert advice from Green Chronicles.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Welcome Section -->
+  <section class="py-16 bg-[#f8f9fa]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-start mb-10">
+          <div class="flex-shrink-0 mr-6 mt-2">
+            <div class="w-12 h-12 rounded-full bg-[#1f4c27] flex items-center justify-center">
+              <i class="fas fa-leaf text-white text-xl"></i>
+            </div>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-[#1f4c27] mb-4">Welcome to Green Chronicles</h2>
+            <p class="text-lg text-gray-700 leading-relaxed">
+              Explore the beauty and science behind each leaf, stem, and root with our carefully curated guides. 
+              Whether you're a novice with your first succulent or a seasoned gardener tending to a lush indoor jungle, 
+              these guides will help you foster healthy, vibrant growth.
+            </p>
+          </div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white p-8 rounded-xl shadow-sm border border-[#e2e8f0]">
+            <h3 class="text-xl font-semibold text-[#1f4c27] mb-4 flex items-center">
+              <i class="fas fa-heart text-[#f4c448] mr-3"></i>
+              Why Proper Plant Care Matters
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              Plants are living art—sensitive to their surroundings and responsive to your care. 
+              Neglect common pitfalls like overwatering or poor lighting, and you'll see wilting leaves 
+              or stunted growth. Follow these foundational principles to ensure your plants not only 
+              survive but <span class="font-bold text-[#1f4c27]">thrive</span>.
+            </p>
+          </div>
+          
+          <div class="bg-[#1f4c27] text-white p-8 rounded-xl shadow-sm">
+            <h3 class="text-xl font-semibold mb-4 flex items-center">
+              <i class="fas fa-umbrella-beach text-[#f4c448] mr-3"></i>
+              Our Approach
+            </h3>
+            <p class="leading-relaxed">
+              Our nature-inspired approach emphasizes simplicity, sustainability, and harmony with the environment. 
+              We believe in understanding each plant's unique needs rather than following rigid rules, 
+              helping you create a sustainable relationship with your botanical companions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Care Tips -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-[#1f4c27] mb-4">Essential Care Principles</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Master these fundamental practices that form the backbone of healthy plant growth
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        {careTips.map((tip, index) => (
+          <div key={index} class="group">
+            <div class="bg-gradient-to-br from-[#f0f7f4] to-[#e0f0eb] p-6 rounded-xl border border-[#d1e7e0] transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
+              <div class="w-12 h-12 rounded-full bg-[#1f4c27] flex items-center justify-center mb-4">
+                <i class="fas fa-water text-white text-xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-[#1f4c27] mb-3">{tip.title}</h3>
+              <p class="text-gray-700 leading-relaxed">{tip.content}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Plant Types Grid -->
+  <section class="py-16 bg-[#f8f9fa]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-[#1f4c27] mb-4">Plant Categories</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Discover guidance tailored specifically to your favorite plant types
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {plantTypes.map((plant, index) => (
+          <div key={index} class="bg-white rounded-xl shadow-sm p-6 text-center transition-all duration-300 hover:shadow-md hover:-translate-y-1 border border-[#e2e8f0]">
+            <div class="w-16 h-16 rounded-full bg-[#f0f7f4] flex items-center justify-center mx-auto mb-4">
+              <i class={`${plant.icon} text-[#1f4c27] text-2xl`}></i>
+            </div>
+            <h3 class="text-xl font-semibold text-[#1f4c27] mb-2">{plant.name}</h3>
+            <p class="text-gray-600">{plant.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-20 bg-gradient-to-r from-[#1f4c27] to-[#0d2a15]">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to become a Plant Whisperer?</h2>
+      <p class="text-xl text-[#f4c448] mb-10 max-w-2xl mx-auto">
+        Join thousands of plant lovers who've transformed their spaces with our expert-guided care
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/guides/beginner" class="px-8 py-4 bg-[#f4c448] text-[#1f4c27] font-semibold rounded-lg hover:bg-[#e5b33b] transition-colors duration-300 shadow-lg">
+          Start Your Journey
+        </a>
+        <a href="/about" class="px-8 py-4 bg-transparent border-2 border-[#f4c448] text-[#f4c448] font-semibold rounded-lg hover:bg-[#f4c448] hover:text-[#1f4c27] transition-colors duration-300">
+          Learn More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    @keyframes blob {
+      0% {
+        transform: translate(0px, 0px) scale(1);
+      }
+      33% {
+        transform: translate(30px, -50px) scale(1.1);
+      }
+      66% {
+        transform: translate(-20px, 20px) scale(0.9);
+      }
+      100% {
+        transform: translate(0px, 0px) scale(1);
+      }
+    }
+    .animate-blob {
+      animation: blob 15s infinite;
+    }
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+    .animation-delay-4000 {
+      animation-delay: 4s;
+    }
+  </style>
+</Layout>

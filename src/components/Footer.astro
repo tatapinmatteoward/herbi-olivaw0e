@@ -1,0 +1,22 @@
+---
+const currentYear = new Date().getFullYear();
+const socialLinks = [
+  { icon: 'fab fa-instagram', url: '#' },
+  { icon: 'fab fa-pinterest', url: '#' },
+  { icon: 'fab fa-youtube', url: '#' },
+  { icon: 'fab fa-tiktok', url: '#' }
+];
+---
+
+<footer class="bg-[#5d7d67] text-white py-8">
+  <div class="container mx-auto px-4 text-center">
+    <p class="text-lg font-bold">&copy; {currentYear} Herbivore Hub. All rights reserved.</p>
+    <div class="flex justify-center gap-6 mt-4">
+      {socialLinks.map((link) => (
+        <a href={link.url} class="text-white hover:text-[#ff7b6c] transition-colors duration-300">
+          <i class={link.icon}></i>
+        </a>
+      ))}
+    </div>
+  </div>
+</footer>
